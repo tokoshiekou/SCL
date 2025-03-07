@@ -9,13 +9,13 @@
 // ==/UserScript==
 
 (function () {
-  'use strict';
+    'use strict';
 
-  // Check if we are on the Zenn page
-  if (!window.location.host.includes("zenn.dev")) return;
+    // Check if we are on the Zenn page
+    if (!window.location.host.includes("zenn.dev")) return;
 
-  // Dark mode CSS variables override
-  GM_addStyle(`
+    // Dark mode CSS variables override
+    GM_addStyle(`
         :root {
             /* Primary Colors */
             --c-blue-100: #121212;
@@ -145,6 +145,13 @@
         }
         .msg-content>.code-line>code {
             background-color: var(--c-bg-secondary) !important;
+            color: var(--c-text-body) !important;
+        }
+        .TabLinkGroup_link__I5brq[aria-current=page] {
+            background-color: var(--c-selection-highlight) !important;
+            color: var(--c-text-body) !important;
+        }
+        .cm-scroller {
             color: var(--c-text-body) !important;
         }
         img {
